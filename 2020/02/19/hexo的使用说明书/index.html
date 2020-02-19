@@ -15,7 +15,7 @@
 <meta property="og:description" content="由于我使用的是windows10系统，所以先下载了git方便后续操作（使用cmd也可以） –动起来，事情真的比你想的要复杂的多！但完成一件事请也真的要高兴的多。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-19T08:47:50.000Z">
-<meta property="article:modified_time" content="2020-02-19T11:25:16.844Z">
+<meta property="article:modified_time" content="2020-02-19T11:40:06.568Z">
 <meta property="article:author" content="smallwhitezxw">
 <meta name="twitter:card" content="summary">
   
@@ -128,32 +128,22 @@
 <li><p>回到blog目录下，需要先安装一个git的部署插件：<em>*cnpm install –save hexo-deployer-git</em></p>
 </li>
 <li><p>随后需要我们配置_config.yml文件：</p>
-<blockquote>
 <p>配置_config.yml文件：</p>
-<blockquote>
-<p>deploy:<br> type: ‘git’<br> repo: <a href="https://github.com/smallwhitezxw/smallwhitezxw.github.io.git" target="_blank" rel="noopener">https://github.com/smallwhitezxw/smallwhitezxw.github.io.git</a><br> branch: master</p>
-<blockquote>
+<p>​        deploy:<br>​            type: ‘git’<br>​            repo: <a href="https://github.com/smallwhitezxw/smallwhitezxw.github.io.git" target="_blank" rel="noopener">https://github.com/smallwhitezxw/smallwhitezxw.github.io.git</a><br>​            branch: master</p>
 <p>其中repo是仓库的地址，注意在每一个:的后面都需要加一个空格，否则无效！！！</p>
-</blockquote>
-</blockquote>
-</blockquote>
 </li>
 <li><p>部署到远端：<strong>hexo d</strong></p>
-<blockquote>
 <p><strong>坑！！</strong>：由于我们是使用git进行操作，所以在往远端推之前，必须配置git的user.name和user.email：</p>
-<blockquote>
 <ul>
-<li>如果你的Git还没有初始化，可以通过这个指令：</li>
-</ul>
+<li><p>如果你的Git还没有初始化，可以通过这个指令：</p>
 <p><strong>git config –global user.name “输入你的用户名”</strong></p>
 <p><strong>git config –global user.email “输入你的邮箱”</strong></p>
-<ul>
-<li>如果你的git已经初始化并且需要修改：</li>
-</ul>
+</li>
+<li><p>如果你的git已经初始化并且需要修改：</p>
 <p><strong>git config –global –replace-all user.email “我的邮箱”</strong></p>
 <p><strong>git config –global –replace-all user.name “用户名”</strong></p>
-</blockquote>
-</blockquote>
+</li>
+</ul>
 </li>
 <li><p>部署完成后，使用smallwhitezxw.github.io即可访问自己的博客了！！！</p>
 </li>
@@ -163,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/19/hexo%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6/" data-id="ck6t8lm6a0002s4ug4l3iewz3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/19/hexo%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6/" data-id="ck6t8w1v400004kug9ons7dxt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,10 +207,6 @@
         
           <li>
             <a href="/2020/02/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">新的开始</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/19/hello-world/">Hello World</a>
           </li>
         
       </ul>
