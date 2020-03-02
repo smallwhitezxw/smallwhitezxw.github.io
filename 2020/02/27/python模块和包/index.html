@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="菜B文的私人笔记">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-26T16:33:59.000Z">
-<meta property="article:modified_time" content="2020-03-02T11:11:28.229Z">
+<meta property="article:modified_time" content="2020-03-02T11:22:52.315Z">
 <meta property="article:author" content="smallwhitezxw">
 <meta name="twitter:card" content="summary">
   
@@ -170,16 +170,25 @@
 <hr>
 <h2 id="2-包"><a href="#2-包" class="headerlink" title="2.包"></a>2.包</h2><p><strong>定义</strong>：包是将模块以文件夹的组织形式进行分组管理的方法。</p>
 <p><strong>作用</strong>：</p>
-<pre><code>1. 将一系列模块进行分类管理，有利于防止命名冲突。
-  2. 可以在需要时加载一个或部分模块则不是全部模块。</code></pre><hr>
+<ol>
+<li>将一系列模块进行分类管理，有利于防止命名冲突。</li>
+<li>可以在需要时加载一个或部分模块则不是全部模块。</li>
+</ol>
+<hr>
 <h3 id="init-py文件"><a href="#init-py文件" class="headerlink" title="_init_.py文件"></a>_<em>init_</em>.py文件</h3><ul>
 <li>_<em>init_</em>.py文件是常规包内必须存在的文件，_<em>init_</em>.py文件会在包加载时自动调用。</li>
 </ul>
 <hr>
 <p><strong>作用</strong>：</p>
-<pre><code>1. 编写此包的内容
- 2. 在内部填写文档字符串
- 3. 在\__init\__.py文件内可以加载此包所依赖的一些其他模块包的导入。</code></pre><p><strong>_<em>init_</em>.py内的__all__列表</strong>：</p>
+<ol>
+<li><p>编写此包的内容</p>
+<ol start="2">
+<li>在内部填写文档字符串</li>
+<li>在_<em>init_</em>.py文件内可以加载此包所依赖的一些其他模块包的导入。</li>
+</ol>
+</li>
+</ol>
+<p><strong>_<em>init_</em>.py内的__all__列表</strong>：</p>
 <ul>
 <li>作用：用来记录此包中有哪些子明或模块再用from import *语句时被导入。</li>
 <li>说明：__all__列表只对from import *语句起作用</li>
