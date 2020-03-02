@@ -90,145 +90,15 @@
       
         <hr>
 <hr>
-<h2 id="1-模块"><a href="#1-模块" class="headerlink" title="1.模块"></a>1.模块</h2><h4 id="模块的分类"><a href="#模块的分类" class="headerlink" title="模块的分类"></a>模块的分类</h4><ul>
-<li>内建模块</li>
-<li>标准库模块</li>
-<li>第三方模块</li>
-<li>用户自己编写的模块</li>
-</ul>
-<hr>
-<h4 id="模块的导入语句种类："><a href="#模块的导入语句种类：" class="headerlink" title="模块的导入语句种类："></a>模块的导入语句种类：</h4><ol>
-<li>import 语句</li>
-<li>from import 语句</li>
-<li>from import * </li>
-</ol>
-<h4 id="模块的搜索顺序："><a href="#模块的搜索顺序：" class="headerlink" title="模块的搜索顺序："></a>模块的搜索顺序：</h4><ol>
-<li><p>搜索程序运行时的路径（即当前路径）</p>
-</li>
-<li><p>sys.path提供的路径</p>
-<ul>
-<li><p>sys.path是一个列表，里面放的都是模块的搜索路径，</p>
-<ol>
-<li><p>可以将模块的py包移动到sys.path里存在的路径下</p>
-</li>
-<li><p>可以用sys.path.append()函数添加路径。</p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>搜索内建模块</p>
-</li>
-</ol>
-<h4 id="模块的加载过程"><a href="#模块的加载过程" class="headerlink" title="模块的加载过程"></a>模块的加载过程</h4><ol>
-<li><p>在模块导入时，模块的所有语句都会执行。</p>
-</li>
-<li><p>如果一个模块已经导入，则再次导入时不会重新执行所有模块内的语句，但是可以用<strong>imp.reload()</strong>函数重新加载。</p>
-</li>
-<li><p>模块导入和执行的过程：（）</p>
-<ol>
-<li>先搜索相关的路径，找到模块名.py</li>
-<li>判断是否有此模块对应的.pyc文件。如果.pyc文件比.py文件新，则直接加载.pyc文件。</li>
-<li>否则，用模块.py文件生成.pyc，并加载执行。</li>
-</ol>
-</li>
-</ol>
-<h4 id="模块的各种属性"><a href="#模块的各种属性" class="headerlink" title="模块的各种属性"></a>模块的各种属性</h4><ul>
-<li>模块的__doc__属性：此属性用于绑定模块的文档字符串<ul>
-<li>模块内第一个没有赋值给任何变量的字符成为模块的文档字符串</li>
-</ul>
-</li>
-<li>模块的__file__属性：<ul>
-<li>此属性用于记录模块对应的文件路径</li>
-</ul>
-</li>
-<li>模块的__name__属性：<ul>
-<li>用来记录模块自身的名字。</li>
-<li>作用：<ol>
-<li>记录模块名</li>
-<li>用来判断是否为主模块（当模块为主模块（也就是第一个运行的模块）运行时，_<em>name_<em>绑定’__main\</em></em>‘，模块不是主模块，而是被其他模块导入时，__name__绑定模块名）</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>模块的__all__属性（仅作用与from import *语句）：<ul>
-<li>在模块前加入_<em>all_</em>=[]列表，在列表内添加模块内的变量名，则该模块在被以from import * 方式调用时，仅仅会调用__all__列表内的变量！4</li>
-</ul>
-</li>
-<li>模块的隐藏属性：<ul>
-<li>模块中以’_’开头的属性，在from xxx import * 导包时，将不被导入，通常称这些属性（变量）为隐藏属性</li>
-</ul>
-</li>
-</ul>
-<p>dir函数：返回当前模块有哪些变量</p>
-<p><strong>random模块</strong>：</p>
-<ul>
-<li></li>
-</ul>
-<hr>
-<hr>
-<hr>
-<h2 id="2-包"><a href="#2-包" class="headerlink" title="2.包"></a>2.包</h2><p><strong>定义</strong>：包是将模块以文件夹的组织形式进行分组管理的方法。</p>
-<p><strong>作用</strong>：</p>
-<pre><code>1. 将一系列模块进行分类管理，有利于防止命名冲突。
-  2. 可以在需要时加载一个或部分模块则不是全部模块。</code></pre><hr>
-<h3 id="init-py文件"><a href="#init-py文件" class="headerlink" title="_init_.py文件"></a>_<em>init_</em>.py文件</h3><ul>
-<li>_<em>init_</em>.py文件是常规包内必须存在的文件，_<em>init_</em>.py文件会在包加载时自动调用。</li>
-</ul>
-<hr>
-<p><strong>作用</strong>：</p>
-<pre><code>1. 编写此包的内容
- 2. 在内部填写文档字符串
- 3. 在\__init\__.py文件内可以加载此包所依赖的一些其他模块包的导入。</code></pre><p><strong>_<em>init_</em>.py内的__all__列表</strong>：</p>
-<ul>
-<li>作用：用来记录此包中有哪些子明或模块再用from import *语句时被导入。</li>
-<li>说明：__all__列表只对from import *语句起作用</li>
-</ul>
-<h3 id="包的导入："><a href="#包的导入：" class="headerlink" title="包的导入："></a>包的导入：</h3><p>同模块导入规则：</p>
-<ol>
-<li>import语句<ul>
-<li>import 包名 [as 自定义名]</li>
-<li>import 包名.模块名 [as 自定义名]</li>
-<li>import 包名.子包名.模块名 [as 自定义名]</li>
-</ul>
-</li>
-<li>from import语句<ul>
-<li>from 包名 import 模块名 [as 自定义名]</li>
-<li>from 包名.模块名 import 模块名 [as 自定义名]</li>
-<li>from 包名.子包名.模块名 [as 自定义名]</li>
-</ul>
-</li>
-<li>from import * 语句<ul>
-<li>from 包名 import *</li>
-<li>from 包名.模块名 import *</li>
-</ul>
-</li>
-</ol>
-<h3 id="导入包的索引路径顺序："><a href="#导入包的索引路径顺序：" class="headerlink" title="导入包的索引路径顺序："></a>导入包的索引路径顺序：</h3><ol>
-<li>搜索程序的当前路径</li>
-<li>sys.path提供的路径（同模块相同可以更改）</li>
-</ol>
-<h3 id="包的相对导入："><a href="#包的相对导入：" class="headerlink" title="包的相对导入："></a>包的相对导入：</h3><ul>
-<li>包的相对导入是指包内模块的相互导入</li>
-<li>语法：<ul>
-<li>from 相对路径包或模块 import 属性或模块名</li>
-<li>from 相对路径包或模块 import *</li>
-</ul>
-</li>
-<li>相对路径：<ul>
-<li>.代表当前目录</li>
-<li>..代表上一级目录</li>
-<li>...代表上二级目录</li>
-<li>....以此类推</li>
-<li><strong>注</strong>：相对导入不能超出包的外部！</li>
-</ul>
-</li>
-</ul>
-
+        
+          <p class="article-more-link">
+            <a href="/2020/02/27/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/27/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" data-id="ck7ad0yd20000o4ugbt9ldsj9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/27/python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" data-id="ck7adbsmr0004wcug2xsldzfu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -252,7 +122,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/24/python%E5%AE%B9%E5%99%A8/">python容器</a>
+      <a class="article-title" href="/2020/02/24/python%E5%AE%B9%E5%99%A8/">python各种容器</a>
     </h1>
   
 
@@ -261,7 +131,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>删除列表中的变量：del(a[x])或删除切片形式:a[a:b]<br>列表：列表是（可变）序列，是容器。<br>相关函数：len,max,min,sum,any,all<br>相关方法：index,insert,count,remove,copy(deepcopy),append,extend(list),clear,sort,pop(索引)，reverse(反转)<br>字符串方法：.split(),.join.<br>列表推导式：【x for x in range(10)】,通过推导式生成一个从推到始终得到的数据的列表。可以嵌套多重循环</p>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>删除列表中的变量：del(a[x])或删除切片形式:a[a:b]<br>列表：列表是（可变）序列，是容器。<br>相关函数：len,max,min,sum,any,all<br>相关方法：index,insert,count,remove,copy(deepcopy),append,extend(list),clear,sort,pop(索引)，reverse(反转)<br>字符串方法：.split(),.join.<br>列表推导式：【x for x in range(10)】,通过推导式生成一个从推到始终得到的数据的列表。可以嵌套多重循环</p>
+<hr>
         
           <p class="article-more-link">
             <a href="/2020/02/24/python%E5%AE%B9%E5%99%A8/#more">Read More</a>
@@ -270,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/24/python%E5%AE%B9%E5%99%A8/" data-id="ck7ad0yd70001o4ughqz4g9vq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/24/python%E5%AE%B9%E5%99%A8/" data-id="ck7adbsmq0003wcug28t1des4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/24/python%E5%87%BD%E6%95%B0/" data-id="ck71sfvv10001egugfmaa0mv5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/24/python%E5%87%BD%E6%95%B0/" data-id="ck7adbsmn0001wcugdt8f8d8m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/21/c-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93/" data-id="ck71sfvus0000egug0avfa1bk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/21/c-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93/" data-id="ck7adbsms0005wcuggx6egjh7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -398,8 +269,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>由于我使用的是windows10系统，所以先下载了<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>方便后续操作（使用cmd也可以）</p>
-<p>–动起来，事情真的比你想的要复杂的多！但完成一件事请也真的要高兴的多。</p>
-<hr>
         
           <p class="article-more-link">
             <a href="/2020/02/19/hexo%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6/#more">Read More</a>
@@ -408,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/19/hexo%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6/" data-id="ck6t8w1v400004kug9ons7dxt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/19/hexo%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6/" data-id="ck7adbsmh0000wcug0yc9e7rq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -444,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="ck6t8w1va00014kugdehzgsq5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="ck7adbsmp0002wcugbuoe50w4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -489,7 +358,7 @@
           </li>
         
           <li>
-            <a href="/2020/02/24/python%E5%AE%B9%E5%99%A8/">python容器</a>
+            <a href="/2020/02/24/python%E5%AE%B9%E5%99%A8/">python各种容器</a>
           </li>
         
           <li>
