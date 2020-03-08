@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>字节串和字节数组 | 菜B文的私人笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="字节串和字节数组">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/py%E8%BF%AD%E4%BB%A3%E5%99%A8and%E7%94%9F%E6%88%90%E5%99%A8/index.html">
+<meta property="og:site_name" content="菜B文的私人笔记">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-07T10:14:10.000Z">
+<meta property="article:modified_time" content="2020-03-07T12:27:04.482Z">
+<meta property="article:author" content="smallwhitezxw">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="菜B文的私人笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">菜B文的私人笔记</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="迭代器and生成器-py迭代器and生成器" class="article article-type-迭代器and生成器" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/07/py%E8%BF%AD%E4%BB%A3%E5%99%A8and%E7%94%9F%E6%88%90%E5%99%A8/" class="article-date">
+  <time datetime="2020-03-07T10:14:10.000Z" itemprop="datePublished">2020-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      字节串和字节数组
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<hr>
+<a id="more"></a>
+
+
+
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><ul>
+<li><p>什么是迭代器</p>
+<ol>
+<li>迭代器是访问可迭代对象的工具。</li>
+<li>迭代器是指用iter(obj）函数返回的对象(实例)。</li>
+<li>迭代器可以用next(it)函数获取可迭代对象的数据。</li>
+</ol>
+</li>
+<li><p>迭代器函数iter和next</p>
+<ol>
+<li>iter(iterable)从可迭代对象中返回一个迭代器，iterable必须是能提供一个迭代器的对象。</li>
+<li>next(iterator)从迭代器iterator中获取下一个记录，如果无法获取下一条记录，则触发StopIteration异常。</li>
+</ol>
+<p><strong>说明</strong>：</p>
+<ol>
+<li>迭代器只能向前取值，不会后退。</li>
+<li>用iter函数可以返回一个可迭代对象的迭代器</li>
+</ol>
+<p><strong>作用</strong>：迭代器对象能用next函数获取下一个元素。</p>
+</li>
+</ul>
+<ul>
+<li>迭代工具函数：迭代工具函数的作用是生成一个个性化的可迭代对象。<ul>
+<li>函数<ol>
+<li>zip(iter1[],iter2[])–返回一个zip对象，此对象用于生成元组，此元组的个数由最小的可迭代对象决定。可用于dict(zip())方法生成字典。</li>
+<li>emumerate(iterable[],start)–生成带索引的枚举对象，返回迭代类型为索引-值对(index-value对)，默认索引从0开始，也可以用start指定。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><ul>
+<li>什么是生成器：生成器是能够动态提供数据的对象，生成器对象也是可迭代对象(实例)</li>
+<li>生成器有两种：<ol>
+<li>生成器函数。</li>
+<li>生成器表达式。</li>
+</ol>
+</li>
+</ul>
+<p><strong>一.生成器函数</strong>：</p>
+<ul>
+<li><p>生成器函数的定义：含有yield语句的函数时生成器函数，此函数被调用将返回一个生成器对象。(yield翻译成产生/生成)</p>
+</li>
+<li><p>yield 语句</p>
+<ul>
+<li>语法：yield 表达式</li>
+<li>说明：<ol>
+<li>yield用于def函数中，目的是将此函数作为生成器函数使用。</li>
+<li>yield用于生成数据，供迭代器的next(it)函数使用。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>生成器函数说明：生成器函数的调用将返回一个生成器对象，生成器对象是一个可迭代对象。在生成器函数调用return时会触发一个StopIteration异常。</p>
+</li>
+</ul>
+<p><strong>二.生成器表达式</strong>：</p>
+<ul>
+<li><p>语法：（表达式 for 变量 in 可迭代对象 [if 真值表达式]）</p>
+</li>
+<li><p>说明：if子句可以省略。</p>
+</li>
+<li><p>作用：用推导式的形式创建发一个新的生成器。</p>
+</li>
+<li><p>示例：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gen = (x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>))</span><br><span class="line">it = iter(gen)</span><br><span class="line">next(it) <span class="comment"># 1</span></span><br><span class="line">next(it) <span class="comment"># 4</span></span><br><span class="line">next(it) <span class="comment"># 9</span></span><br><span class="line">next(it) <span class="comment"># 16</span></span><br><span class="line">next(it) <span class="comment"># StopIteration异常</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/07/py%E8%BF%AD%E4%BB%A3%E5%99%A8and%E7%94%9F%E6%88%90%E5%99%A8/" data-id="ck7iqyj14000390ugdhdxhylo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/07/py%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          py字节串和字节数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/07/py%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">异常处理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/07/py%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/">py字节串和字节数组</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/07/py%E8%BF%AD%E4%BB%A3%E5%99%A8and%E7%94%9F%E6%88%90%E5%99%A8/">字节串和字节数组</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/07/py%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">异常处理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/27/py%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">python模块与包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/24/py%E5%AE%B9%E5%99%A8/">python各种容器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 smallwhitezxw<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -5,17 +5,15 @@
   
 
   
-  <title>c++数组与字符串总结 | 菜B文的私人笔记</title>
+  <title>py字节串和字节数组 | 菜B文的私人笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="c++数组 数组是一种基本的数据结构，用于按顺序存储元素的集合。但是元素可以随机存取，因为数组中的每个元素都可以通过数组索引来识别。  sezeof()：显示变量所占内存大小   动态数组 仍然是一个随机存取的列表数据结构，但大小是可变的。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="c++数组与字符串总结">
-<meta property="og:url" content="http://yoursite.com/2020/02/21/c-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="py字节串和字节数组">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/py%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="菜B文的私人笔记">
-<meta property="og:description" content="c++数组 数组是一种基本的数据结构，用于按顺序存储元素的集合。但是元素可以随机存取，因为数组中的每个元素都可以通过数组索引来识别。  sezeof()：显示变量所占内存大小   动态数组 仍然是一个随机存取的列表数据结构，但大小是可变的。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-21T08:09:49.000Z">
-<meta property="article:modified_time" content="2020-02-21T13:25:25.504Z">
+<meta property="article:published_time" content="2020-03-07T10:15:45.000Z">
+<meta property="article:modified_time" content="2020-03-07T12:57:58.473Z">
 <meta property="article:author" content="smallwhitezxw">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-c-数组与字符串总结" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-py字节串和字节数组" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/02/21/c-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2020-02-21T08:09:49.000Z" itemprop="datePublished">2020-02-21</time>
+    <a href="/2020/03/07/py%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/" class="article-date">
+  <time datetime="2020-03-07T10:15:45.000Z" itemprop="datePublished">2020-03-07</time>
 </a>
     
   </div>
@@ -80,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      c++数组与字符串总结
+      py字节串和字节数组
     </h1>
   
 
@@ -88,21 +86,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="c-数组"><a href="#c-数组" class="headerlink" title="c++数组"></a>c++数组</h3><ul>
-<li><p><code>数组</code>是一种基本的数据结构，用于按顺序<code>存储元素的集合</code>。但是元素可以随机存取，因为数组中的每个元素都可以通过数组<code>索引</code>来识别。</p>
+        <hr>
+<hr>
+<a id="more"></a>
+
+<p><strong>字节类型只能允许 ASCII 字符（0<del>127</del>255）</strong></p>
+<p><strong>函数</strong>：</p>
 <ol>
-<li>sezeof()：显示变量所占内存大小</li>
+<li><p>.encode()</p>
+</li>
+<li><p>.decode()</p>
+</li>
 </ol>
-</li>
-<li><p>动态数组</p>
-<p>仍然是一个随机存取的列表数据结构，但<strong>大小是可变的</strong>。</p>
-</li>
-</ul>
+<p><strong>创建空字节串的字面值</strong>：</p>
+<p>B = b’’</p>
+<p>B = b” “</p>
+<p>B = b’’’ ‘’’</p>
+<p>B = b””” “””</p>
+<p><strong>创建非空字节串的字面值</strong>：</p>
+<p>B= b’ABCD’</p>
+<p>B = b”ABCD”</p>
+<p>B = b’\x41\x42’</p>
+<p><strong>字节串的构造函数bytes</strong>：</p>
+<p>bytes()生成一个新的字节串，等同于b’ ‘</p>
+<p>bytes(整数可迭代对象)#用可迭代对象初始化一个字节串</p>
+<p>bytes(整数n)生成n个值为0的字节串</p>
+<p>bytes(字符串，encoding=’utf-8’)</p>
+<p>用字符串转为编码生成一个字节串</p>
+<p><strong>示例</strong>：</p>
+<p>b = bytes()  #b = b’’</p>
+<p>b = bytes(range(65,69))  #b=b’ABCD’</p>
+<p>b = bytes(5) #b=b’\x00\x00\x00\x00’</p>
+<p>b = bytes(‘abc中文’) #b = ‘abc\x00………’</p>
+<p><strong>bytearray</strong>：</p>
+<p>bytearray和bytes不一样的地方在于，bytearray是可变的。</p>
+<p>bytearray语法与字符串基本相同，可以使用切片等操作，</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/21/c-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93/" data-id="ck7adbsms0005wcuggx6egjh7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/07/py%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/" data-id="ck7iqyj0w000090ug11zw78h7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -111,19 +134,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/02/24/py%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          python函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/19/hexo%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/03/07/py%E8%BF%AD%E4%BB%A3%E5%99%A8and%E7%94%9F%E6%88%90%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">搭建hexo博客过程总结</div>
+      <div class="article-nav-title">字节串和字节数组</div>
     </a>
   
 </nav>

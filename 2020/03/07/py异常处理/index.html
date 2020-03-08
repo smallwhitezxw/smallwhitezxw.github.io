@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>异常处理 | 菜B文的私人笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="异常处理">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/py%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="菜B文的私人笔记">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-07T10:13:19.000Z">
+<meta property="article:modified_time" content="2020-03-07T11:37:07.905Z">
+<meta property="article:author" content="smallwhitezxw">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="菜B文的私人笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">菜B文的私人笔记</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-py异常处理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/07/py%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="article-date">
+  <time datetime="2020-03-07T10:13:19.000Z" itemprop="datePublished">2020-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      异常处理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>
+
+<p>异常 except：</p>
+<ul>
+<li><p>什么是错误</p>
+<p>错误是指由于逻辑或者语句语法等导致一个程序已经无法正常执行的问题。</p>
+</li>
+<li><p>什么是异常</p>
+<p>异常时程序出错时的一种<strong>状态</strong>，当异常发生时，程序不会再向下执行，而转去调用此函数的地方待到处理此错误并恢复正常状态。</p>
+</li>
+<li><p>异常的作用</p>
+<p>用作信号，通知上层调用者有错误产生需要处理。</p>
+</li>
+</ul>
+<h3 id="try-except语句："><a href="#try-except语句：" class="headerlink" title="try-except语句："></a>try-except语句：</h3><p><strong>语法</strong>：</p>
+<p>try:</p>
+<p>​    可能触发异常的语句</p>
+<p>except 错误类型2 [as 变量]（as后变量会返回引起错误的具体信息）:</p>
+<p>​    异常处理语句</p>
+<p>except 错误类型2 [as 变量]:</p>
+<p>​    异常处理语句2</p>
+<p>except:</p>
+<p>​    异常处理语句(其他)</p>
+<p>else：</p>
+<p>​    未发生异常语句</p>
+<p>finally：</p>
+<p>​    最终语句</p>
+<p><strong>作用</strong>：尝试捕获异常，将程序转为正常状态并正常执行。</p>
+<p><strong>语句说明</strong>：</p>
+<ol>
+<li>as 子句时用于绑定错误对象的变量，可以省略。</li>
+<li>except子句可以有一个或者多个，但至少要有一个。</li>
+<li>else子句最多只能有一个，也可以省略不写。</li>
+<li>finally子句最多只能有一个，也可以省略不写。</li>
+<li>else子句的语句将在try语句没有发生异常时执行。</li>
+<li>finally子句的语句在任何情况下都会执行。</li>
+</ol>
+<h3 id="try-finally语句："><a href="#try-finally语句：" class="headerlink" title="try-finally语句："></a>try-finally语句：</h3><p><strong>语法</strong>：</p>
+<p>try：</p>
+<p>​    可能触发异常的语句</p>
+<p>finally：</p>
+<p>​    最终语句</p>
+<p><strong>说明</strong>：</p>
+<ol>
+<li>finally子句不可省略。</li>
+<li>一定不存在except子句。</li>
+</ol>
+<p><strong>作用</strong>：通常用try-finally语句来做触发异常时必须要处理的事情，无论异常是否发生，finally子句都会被执行。</p>
+<p><strong>注意</strong>：try-finally语句不会改变程序的（正常/异常）状态。</p>
+<h3 id="raise语句："><a href="#raise语句：" class="headerlink" title="raise语句："></a>raise语句：</h3><ul>
+<li><p>作用：主动触发一个错误，让程序进入异常状态。</p>
+</li>
+<li><p>语法：</p>
+<ul>
+<li>raise 异常类型</li>
+<li>raise 异常对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="assert-语句（断言语句）："><a href="#assert-语句（断言语句）：" class="headerlink" title="assert 语句（断言语句）："></a>assert 语句（断言语句）：</h3><ul>
+<li><p>语法：</p>
+<p>assert 真值表达式，错误数据（通常是字符串）</p>
+</li>
+<li><p>作用：当真值表达式为False时，用错误数据创建一个AssertionError类型的错误，并进入异常状态。</p>
+<ul>
+<li><p>等同于：</p>
+<p>if 真值表达式 == False：</p>
+<p>​    raise AssertionError     </p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><ol>
+<li>try-except语句：<ul>
+<li>用于接收异常通知，捕获异常。</li>
+</ul>
+</li>
+<li>try-finally 语句：<ul>
+<li>执行必须要执行的语句</li>
+</ul>
+</li>
+<li>raise语句：<ul>
+<li>发送异常通知，并进行异常状态</li>
+</ul>
+</li>
+<li>assert 语句<ul>
+<li>根据条件选择性的发送AssertionError类型的异常通知</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/07/py%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" data-id="ck7iqyj11000190uggzemacht" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/07/py%E8%BF%AD%E4%BB%A3%E5%99%A8and%E7%94%9F%E6%88%90%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          字节串和字节数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/27/py%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python模块与包</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/07/py%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/">py字节串和字节数组</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/07/py%E8%BF%AD%E4%BB%A3%E5%99%A8and%E7%94%9F%E6%88%90%E5%99%A8/">字节串和字节数组</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/07/py%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">异常处理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/27/py%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">python模块与包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/24/py%E5%AE%B9%E5%99%A8/">python各种容器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 smallwhitezxw<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
