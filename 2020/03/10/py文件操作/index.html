@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>py文件操作 | 菜B文的私人笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="py文件操作">
+<meta property="og:url" content="http://yoursite.com/2020/03/10/py%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="菜B文的私人笔记">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-10T12:33:12.000Z">
+<meta property="article:modified_time" content="2020-03-17T14:55:24.258Z">
+<meta property="article:author" content="smallwhitezxw">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="菜B文的私人笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">菜B文的私人笔记</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-py文件操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/10/py%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2020-03-10T12:33:12.000Z" itemprop="datePublished">2020-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      py文件操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<hr>
+<a id="more"></a>
+
+<p>各操作系统的换行符：</p>
+<ol>
+<li>linux：’\n’</li>
+<li>windows：’\r\n’</li>
+<li>新Mac OS:’\n’</li>
+<li>旧Macintosh：’\r’(已经不用了)</li>
+</ol>
+<h3 id="文件File："><a href="#文件File：" class="headerlink" title="文件File："></a>文件File：</h3><ol>
+<li>用于存储数据和单位</li>
+<li>通常用来长期存储数据</li>
+<li>数据以字节为单位进行顺序存储。 </li>
+</ol>
+<h3 id="文件的操作"><a href="#文件的操作" class="headerlink" title="文件的操作"></a>文件的操作</h3><ol>
+<li>打开文件</li>
+<li>读/写文件</li>
+<li>关闭文件<ul>
+<li>注：任何的操作系统中，一个应用程序同时打开的文件的数量有最大限制。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>文件的打开函数：</p>
+<p>open(file,mode=’rt’)用于打开一个文件，返回此文件流对象，如果打开文件失败，则触发一个OSError错误。</p>
+</li>
+<li><p>文件的关闭：f.close() </p>
+</li>
+<li><p>文本文件操作：</p>
+<ul>
+<li><p>操作模式：‘t’：以文本方式打开。</p>
+<ul>
+<li>说明：<ol>
+<li>默认文件中存储的都为字符数据，在读写过程中会自动进行编码操作。</li>
+<li>文本文件以行为单位进行分隔，在py内部统一用‘\n’作为换行符进行分隔。</li>
+<li>对文本文件的读写操作需要用字符串(str)进行数据操作。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>操作模式‘r’:以只读方式打开(默认)</p>
+<ol>
+<li>readline()按行返回字符，结尾默认’\n’.</li>
+<li>readlines()返回一个列表，每一行为列表的一项，每行结尾默认’\n’。 </li>
+</ol>
+</li>
+<li><p>操作模式‘w’：以只写方式打开，会覆盖原有文件内容，文件不存在，则先创建再打开。</p>
+<ol>
+<li>f.write(‘str’)。</li>
+<li>f.writelines(list)，不会自动换行。</li>
+</ol>
+</li>
+<li><p>操作模式‘x’：创建一个新文件，以写模式打开，如果文件存在则产生‘FileExistsError’错误。</p>
+</li>
+<li><p>操作模式‘a’：以只写文件打开一个文件，内容追加到原文件内容尾部。</p>
+</li>
+<li><p>操作模式‘b’：用二进制模式打开。</p>
+</li>
+</ul>
+</li>
+<li><p>文件流对象是可迭代对象，迭代过程中以换行符‘\n’作为分隔符。</p>
+<p>示例：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'xxx.txt'</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">	print(line)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>标准输入输出文件：</p>
+<ol>
+<li>sys.stdin 标准输入文件（ctrl+d输入文件结束符）</li>
+<li>sys.stdout 标准输出文件</li>
+<li>sys.stderr 标准错误输出文件</li>
+</ol>
+</li>
+</ul>
+<h3 id="一些函数应用"><a href="#一些函数应用" class="headerlink" title="一些函数应用"></a>一些函数应用</h3><ol>
+<li><p>f.tell方法：    </p>
+<ul>
+<li>返回当前的读写位置</li>
+</ul>
+</li>
+<li><p>f.seek方法：</p>
+<ul>
+<li><p>设置当前的读写位置</p>
+</li>
+<li><p>f.seek(偏移量,whence=相对位置)</p>
+<p>偏移量：</p>
+<ul>
+<li><p>大于0的数代表向文件末尾方向移动的字节数</p>
+</li>
+<li><p>小于0的数代表向文件头方向移动的字节数</p>
+</li>
+</ul>
+<p>相对位置：</p>
+<ul>
+<li>0 代表从文件头开始偏移</li>
+<li>1 代表从文件当前读写位置开始偏移</li>
+<li>2 代表从文件尾开始偏移</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>str.strip()：去掉字符串首位\n。</p>
+</li>
+</ol>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><blockquote>
+<p>gbk</p>
+<p>gb18030</p>
+<p>utf-8</p>
+<p>ascii</p>
+<p>。。。。。。</p>
+</blockquote>
+<p>以上字符串用于encode和decode中。</p>
+<ul>
+<li><strong>GBK:</strong>  汉字国标扩展码,基本上采用了原来GB2312-80所有的汉字及码位，并涵盖了原Unicode中所有的汉字20902，总共收录了883个符号，  21003个汉字及提供了1894个造字码位。Windows 95系统就是以GBK为内码，又由于GBK同时也涵盖了Unicode所有CJK汉字，所以也可以和Unicode做一一对应。</li>
+<li><strong>GB18030</strong>是我国继GB2312-1980和GB13000-1993之后最重要的汉字编码标准，</li>
+<li><strong>utf-8：</strong>utf编码兼容iso8859-1编码，同时也可以用来表示所有语言的字符，不 过，utf编码是不定长编码，每一个字符的长度从1-6个字节不等。另外，utf编码自带简单的校验功能。一般来讲，英文字母都是用一个字节表示，而汉字 使用三个字节。</li>
+<li><strong>ascii：</strong> 表示英语及西欧语言，ASCII是用7位表示的，能表示128个字符；其扩展使用8位表示，表示256个字符。</li>
+</ul>
+<h4 id="编码注释"><a href="#编码注释" class="headerlink" title="编码注释"></a>编码注释</h4><p>在py源文件的第一行或者第二行写入如下内容：</p>
+<p><strong># _<em>_ coding:gbk _\</em>_</strong></p>
+<p>#设置源文件编码格式为GBK</p>
+<p>或者</p>
+<p><strong># _<em>_ coding:utf-8 _\</em>_</strong></p>
+<p>#设置源文件编码格式为utf-8</p>
+<ul>
+<li>作用：告诉解释执行器，此文件的编码是什么。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/10/py%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" data-id="cka2bbfim0000lwug52bk6etw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/08/mysql%E7%8E%AF%E5%A2%83%E5%86%8D%E9%85%8D%E7%BD%AE%EF%BC%88%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mysql环境再配置（压缩包）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/10/py%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">py文件操作</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/08/mysql%E7%8E%AF%E5%A2%83%E5%86%8D%E9%85%8D%E7%BD%AE%EF%BC%88%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%89/">mysql环境再配置（压缩包）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/07/py%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/">py字节串和字节数组</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/07/py%E8%BF%AD%E4%BB%A3%E5%99%A8and%E7%94%9F%E6%88%90%E5%99%A8/">迭代器and生成器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/07/py%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">异常处理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 smallwhitezxw<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

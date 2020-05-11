@@ -5,17 +5,15 @@
   
 
   
-  <title>python各种容器 | 菜B文的私人笔记</title>
+  <title>菜B文的私人笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="应用删除列表中的变量：del(a[x])或删除切片形式:a[a:b]列表：列表是（可变）序列，是容器。相关函数：len,max,min,sum,any,all相关方法：index,insert,count,remove,copy(deepcopy),append,extend(list),clear,sort,pop(索引)，reverse(反转)字符串方法：.split(),.join.列表推">
-<meta property="og:type" content="article">
-<meta property="og:title" content="python各种容器">
-<meta property="og:url" content="http://yoursite.com/2020/02/24/py%E5%AE%B9%E5%99%A8/index.html">
+  <meta name="description" content="仅供个人参考">
+<meta property="og:type" content="website">
+<meta property="og:title" content="菜B文的私人笔记">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="菜B文的私人笔记">
-<meta property="og:description" content="应用删除列表中的变量：del(a[x])或删除切片形式:a[a:b]列表：列表是（可变）序列，是容器。相关函数：len,max,min,sum,any,all相关方法：index,insert,count,remove,copy(deepcopy),append,extend(list),clear,sort,pop(索引)，reverse(反转)字符串方法：.split(),.join.列表推">
+<meta property="og:description" content="仅供个人参考">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-24T09:28:52.000Z">
-<meta property="article:modified_time" content="2020-03-02T11:12:56.501Z">
 <meta property="article:author" content="smallwhitezxw">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +64,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-py容器" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-我的第一篇博客文章" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/02/24/py%E5%AE%B9%E5%99%A8/" class="article-date">
-  <time datetime="2020-02-24T09:28:52.000Z" itemprop="datePublished">2020-02-24</time>
+    <a href="/2020/02/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="article-date">
+  <time datetime="2020-02-19T08:15:06.000Z" itemprop="datePublished">2020-02-19</time>
 </a>
     
   </div>
@@ -79,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      python各种容器
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">新的开始</a>
     </h1>
   
 
@@ -88,48 +88,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>删除列表中的变量：del(a[x])或删除切片形式:a[a:b]<br>列表：列表是（可变）序列，是容器。<br>相关函数：len,max,min,sum,any,all<br>相关方法：index,insert,count,remove,copy(deepcopy),append,extend(list),clear,sort,pop(索引)，reverse(反转)<br>字符串方法：.split(),.join.<br>列表推导式：【x for x in range(10)】,通过推导式生成一个从推到始终得到的数据的列表。可以嵌套多重循环</p>
-<hr>
-<a id="more"></a>
-
-<h4 id="元组-tuple"><a href="#元组-tuple" class="headerlink" title="元组 tuple"></a>元组 tuple</h4><p>元组是不可变的序列，但是是可以存放任意类型数据的容器。<br>所有的序列都可以迭代，（字符串，列表，元组），所有的容器也都是可以迭代的。<br>元组不能改变，所以不支持索引赋值和切片赋值，但是支持‘+’号拼接，拼接后会产生一个新的元组替代原元组。<br>元组排序:sorted（iterable，key=None，reverse=Ture）生成一个可迭代对象，<br>reversed（可迭代对象），返回反向顺序的可迭代对象，倒置。生成一个可迭代对象，仅可用于迭代或推导式。</p>
-<h4 id="容器小节："><a href="#容器小节：" class="headerlink" title="容器小节："></a>容器小节：</h4><p>字符串str   #不可变序列，只能存字符<br>列表 list #可变，可以存任何数据<br>元组 tuple  #不可变  可以存任何数据</p>
-<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><p>字典的键必须是不可变类型：bool,int,float,complex,str,tuple,frozenset,bytes<br>字典的值可以为任何类型。</p>
-<p>可变类型有四种：list，dict，set，bytearray（字节数组）</p>
-<h4 id="集合-set："><a href="#集合-set：" class="headerlink" title="集合 set："></a>集合 set：</h4><p>可变容器<br>集合内数据对象唯一，不可重复<br>无序存储结构，数据没有先后关系<br>集合内元素必须是不可变对象<br>相当于没有键值的字典。</p>
-
+        <h2 id="新的尝试，新的开始，不在迷茫，始于行动"><a href="#新的尝试，新的开始，不在迷茫，始于行动" class="headerlink" title="新的尝试，新的开始，不在迷茫，始于行动!"></a>新的尝试，新的开始，不在迷茫，始于行动!</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/24/py%E5%AE%B9%E5%99%A8/" data-id="ck7it616i0006coug3yqt86vy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="ck7it616j0008cougfahdgzqk" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2020/02/27/py%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          python模块与包
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/02/24/py%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">python函数</div>
-    </a>
-  
-</nav>
+</article>
+
 
   
-</article>
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         
